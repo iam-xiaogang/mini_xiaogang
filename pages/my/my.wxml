@@ -1,0 +1,41 @@
+<view class="container">
+    <!-- 上半部分面板 -->
+    <view class="panel">
+        <!-- 头像和基本信息 -->
+        <view class="user-info">
+            <image class="avatar" src="{{avatarUrl}}" />
+            <view class="info">
+                <text class="name">{{userName}}</text>
+                <text class="address">{{address}}</text>
+                <text class="phone">{{phone}}</text>
+            </view>
+
+
+        </view>
+    </view>
+
+    <!-- 下半部分 Cell 列表 -->
+    <view class="cell-list">
+        <van-cell title="我的文章" value="" is-link bind:click="onArticleClick" />
+        <van-cell title="我的信息" value="" is-link bind:click="onInfoClick" />
+    </view>
+
+
+    <!-- <button bind:tap="removeinfo">removeinfo</button> -->
+    <view class="fab">
+        <button class="fab-icon" open-type="contact">
+            <image class="fab-image" src="/static/images/icon/custom.png" mode="aspectFit" />
+        </button>
+    </view>
+    <view wx:if="{{!isLoggedIn}}" class="login-btn-wrapper">
+
+        <van-button type="primary" size="large" class="login-btn" bind:click="onQuickLogin">
+            快速登录
+        </van-button>
+
+        <van-button type="default" size="large" class="login-btn" bind:click="onPhoneLogin">
+            手机号登录
+        </van-button>
+
+    </view>
+</view>

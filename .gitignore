@@ -1,0 +1,30 @@
+# 微信开发者工具生成的文件
+project.config.json
+project.private.config.json
+project.config.json.backup
+wechat_devtools
+
+# Node.js 依赖
+node_modules/
+miniprogram_npm/
+
+# macOS 系统文件
+.DS_Store
+
+# VSCode 配置
+.vscode/
+
+# Python 虚拟环境
+venv/
+env/
+__pycache__/
+
+# 构建产物
+dist/
+build/
+
+# 日志文件
+*.log
+
+# IDE 配置
+.idea/

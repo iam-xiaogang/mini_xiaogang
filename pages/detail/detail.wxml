@@ -1,0 +1,29 @@
+<view class="container">
+   <image class="cover" src="{{article.art_img_url}}" mode="aspectFill" />
+   <view class="title">{{article.title}}</view>
+   <rich-text  wx:if="{{article.content_html}}" nodes="{{article.content_html}}" space="nbsp"></rich-text>
+  <rich-text  wx:if="{{article.content}}" nodes="{{article.content}}" space="nbsp"></rich-text>
+  <view>{{article.timestamp}}</view>
+  <view class="comment" wx:for="{{comments}}" wx:key="id">
+  <view class="comment-avatar">
+    <image src="{{item.user_avatar}}" mode="aspectFill" class="avatar" />
+  </view>
+
+  <!-- 评论内容 -->
+  <view class="comment-details">
+    <!-- 评论者名字 -->
+    <view class="comment-author">{{item.user_name}}</view>
+    <!-- 评论内容 -->
+    <view class="comment-content">{{item.content}}</view>
+    <!-- 评论时间 -->
+    <view class="comment-time">{{item.timestamp}}</view>
+  </view>
+</view>
+  <!-- 评论区 -->
+  <view class="comments">
+    <view class="comment-input">
+      <input  placeholder="写下你的评论..." bindinput="onCommentInput" value="{{commentContent}}"/>
+      <button bindtap="submitComment">发布</button>
+    </view>
+    </view>
+</view>

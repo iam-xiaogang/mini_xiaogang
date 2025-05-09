@@ -1,0 +1,27 @@
+<view class="container">
+
+    <view class="grid" >
+  <view class="grid-item" wx:for="{{items}}" wx:key="index" bindtap="goToDetail" data-id="{{item.id}}">
+    <!-- 文章图片 -->
+    <image class="item-image" src="{{item.art_img_url}}" mode="aspectFill" />
+
+    <!-- 标题 -->
+    <view class="item-content">{{item.title}}</view>
+
+    <!-- 作者信息模块 -->
+    <view class="author-info" >
+      <image class="avatar" src="{{item.author.avatar}}" mode="aspectFill" />
+      <view class="author-name">{{item.author.name}}</view>
+      <view class="view-count">{{item.vc}} 次浏览</view>
+    </view>
+  </view>
+</view>
+<!-- 悬浮按钮 -->
+<view class="fab" bindtap="goToWrite">
+  <image src="/static/images/icon/plus.png" class="fab-icon" />
+</view>
+
+    <!-- 加载更多提示 -->
+    <view wx:if="{{loading}}" class="loading">加载中...</view>
+    <view wx:if="{{!hasMore}}" class="no-more">没有更多了...</view>
+</view>

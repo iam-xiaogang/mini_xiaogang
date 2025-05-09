@@ -1,0 +1,71 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/my/my",
+        "pages/document/document",
+        "pages/knowledge/knowledge",
+        "pages/phonelogin/phonelogin",
+        "pages/detail/detail",
+        "pages/write/write",
+        "pages/userinfo/userinfo",
+        "pages/mydocument/mydocument"
+    ],
+    "permission": {
+        "scope.userInfo": {
+          "desc": "用于完善用户资料"
+        }
+      },
+      
+    "window": {
+        "navigationBarTitleText": "xiaogang",
+        "navigationBarBackgroundColor": "#C0C0C0",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#C0C0C0",
+        "backgroundTextStyle": "dark",
+        "navigationBarTextStyle": "black"
+    },
+    "usingComponents": {
+        "van-grid": "@vant/weapp/grid/index",
+        "van-grid-item": "@vant/weapp/grid-item/index",
+        "van-card": "@vant/weapp/card/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-toast": "@vant/weapp/toast/index",
+        "van-image": "@vant/weapp/image/index",
+        "van-collapse": "@vant/weapp/collapse/index",
+        "van-collapse-item": "@vant/weapp/collapse-item/index",
+        "van-divider": "@vant/weapp/divider/index"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/static/images/icon/index.png",
+                "selectedIconPath": "/static/images/icon/index_select.png"
+            },
+            {
+                "pagePath": "pages/document/document",
+                "text": "分享",
+                "iconPath": "/static/images/icon/share.png",
+                "selectedIconPath": "/static/images/icon/share_select.png"
+            },
+            {
+                "pagePath": "pages/knowledge/knowledge",
+                "text": "知识",
+                "iconPath": "/static/images/icon/knowledge.png",
+                "selectedIconPath": "/static/images/icon/knowledge_select.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "/static/images/icon/my.png",
+                "selectedIconPath": "/static/images/icon/my_select.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

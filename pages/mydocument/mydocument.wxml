@@ -1,0 +1,19 @@
+<view class="container">
+
+    <view class="article-list">
+        <view class="article-card" wx:for="{{articles}}" wx:key="id" bind:tap="goToDetail" data-id="{{item.id}}">
+            <van-card title="{{item.title}}" thumb="{{item.art_img_url}}" lazy-load>
+                <view slot="desc">
+                    <view>作者：{{item.author.name}}</view>
+                    <view>发布时间：{{item.timestamp}}</view>
+                </view>
+            </van-card>
+        </view>
+    </view>
+
+
+
+
+
+
+</view>

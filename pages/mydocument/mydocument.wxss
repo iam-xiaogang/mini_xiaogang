@@ -1,0 +1,7 @@
+.article-list {
+    padding: 20rpx;
+  }
+  
+  .article-card {
+    margin-bottom: 20rpx; /* 设置卡片之间的间距 */
+  }
