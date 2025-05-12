@@ -8,14 +8,15 @@
         "pages/detail/detail",
         "pages/write/write",
         "pages/userinfo/userinfo",
-        "pages/mydocument/mydocument"
+        "pages/mydocument/mydocument",
+        "pages/tools/tools",
+        "components/pdf_to_word"
     ],
     "permission": {
         "scope.userInfo": {
-          "desc": "用于完善用户资料"
+            "desc": "用于完善用户资料"
         }
-      },
-      
+    },
     "window": {
         "navigationBarTitleText": "xiaogang",
         "navigationBarBackgroundColor": "#C0C0C0",

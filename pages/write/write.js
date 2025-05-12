@@ -99,6 +99,10 @@ Page({
             h_role: this.data.h_role,
             art_img_url: art_img
         };
+        wx.showLoading({
+            title: '正在发布...',
+            mask: true  // 可选：防止用户点击其他操作
+        });
         request({
             url: api.create_article,
             method: 'POST',
@@ -108,6 +112,7 @@ Page({
                 'Content-Type': 'application/json'
             }
         }).then(res=>{
+            wx.hideLoading();
             if(res.statusCode>=200 && res.statusCode<=300){
                 wx.showToast({
                     title: '发布成功',
@@ -133,12 +138,5 @@ Page({
                     icon: 'none'
                 });
         })
-
-
-
     }
-
-
-
-
 });

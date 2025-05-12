@@ -7,6 +7,8 @@ Page({
         canSendCode: true,
         countdown: 60,
         intervalId: null,
+        openid:'',
+        tempcode:''
     },
 
     onPhoneInput(e) {
@@ -108,12 +110,22 @@ Page({
             });
             return;
         }
+        wx.login({
+          success: (res) => {
+            if(res.code){
+                this.setData({
+                    tempcode:res.code
+                })
+                console.log('hello',this.data.tempcode)
+            }
+          
         request({
             url: api.login,
             method: 'POST',
             data: {
                 phone: this.data.phone.value,
-                code: this.data.code.value
+                code: this.data.code.value,
+                tempcode:this.data.tempcode
             },
             header: {
                 'Content-Type': 'application/json' // 必须！
@@ -139,7 +151,8 @@ Page({
             }
 
         })
-
+    },
+})
 
     }
 });

@@ -17,7 +17,10 @@ Page({
     
     });
   },
-  onLoad() {
+//   onLoad() {
+//     this.getMockData(this.data.page);
+//   },
+  onShow(){
     this.getMockData(this.data.page);
   },
 
@@ -71,6 +74,16 @@ Page({
   },
   
   goToWrite() {
+      const token = wx.getStorageSync('access_token')
+      console.log(token)
+      if(!token){
+          wx.showToast({
+            title: '请先登录',
+            duration:1500,
+            icon:'none',
+          })
+          return
+      }
     wx.navigateTo({
       url: '/pages/write/write'
     });

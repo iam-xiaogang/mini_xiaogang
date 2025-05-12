@@ -21,7 +21,7 @@
     </view>
 
 
-    <!-- <button bind:tap="removeinfo">removeinfo</button> -->
+    <button bind:tap="removeinfo">removeinfo</button>
     <view class="fab">
         <button class="fab-icon" open-type="contact">
             <image class="fab-image" src="/static/images/icon/custom.png" mode="aspectFit" />

@@ -18,15 +18,15 @@
 <!-- 九宫格菜单 -->
 <view class="card">
   <van-grid column-num="3" gutter="20">
-    <van-grid-item icon="/static/images/card/休息.png" text="信息采集" bindtap="getinfo"/>
+    <van-grid-item icon="/static/images/icon/office-word.png" text="PDF转WORD" bindtap="goToPage" data-type="pdfToWord"/>
     <van-grid-item icon="/static/images/card/招收.png" text="社区活动" bindtap="activity"/>
-    <van-grid-item icon="/static/images/card/浇花.png" text="人脸检测" bindtap="getface"/>
+    <!-- <van-grid-item icon="/static/images/card/浇花.png" text="人脸检测" bindtap="getface"/>
     <van-grid-item icon="/static/images/card/睡觉.png" text="语音识别" bindtap="getvideo"/>
     <van-grid-item icon="/static/images/card/记笔记.png" text="心率检测" bindtap="heart"/>
     <van-grid-item icon="/static/images/card/读书.png" text="商城" bindtap="shop"/>
     <van-grid-item icon="/static/images/card/睡觉.png" text="语音识别" bindtap="getvideo"/>
     <van-grid-item icon="/static/images/card/记笔记.png" text="心率检测" bindtap="heart"/>
-    <van-grid-item icon="/static/images/card/读书.png" text="商城" bindtap="shop"/>
+    <van-grid-item icon="/static/images/card/读书.png" text="商城" bindtap="shop"/> -->
   </van-grid>
 </view>
 
