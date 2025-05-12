@@ -1,3 +1,5 @@
 {
-    "usingComponents": {}
+    "usingComponents": {
+        "pdf-to-word": "/components/pdf_to_word/pdf_to_word"
+    }
 }

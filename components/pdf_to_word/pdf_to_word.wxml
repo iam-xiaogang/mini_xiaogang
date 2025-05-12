@@ -1,0 +1,40 @@
+<view class="page-wrapper">
+
+<!-- 提示区域 -->
+<view class="tips">
+  ⚠️ 请选择小于 10MB 的 PDF 文件进行转换。
+</view>
+
+<!-- 文件列表 -->
+<view class="file-list">
+  <block wx:for="{{fileList}}" wx:key="index">
+    <view class="file-item" bindtap="openFile" data-path="{{item.path}}" data-name="{{item.name}}">
+      <image src="/static/images/icon/office-word.png" class="file-icon" mode="aspectFit" />
+      <text class="file-name">{{ item.name }}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 底部按钮 -->
+<view class="bottom-btn-fixed">
+  <van-button type="primary" block bindtap="chooseFile">选择 PDF 文件</van-button>
+</view>
+
+<!-- 成功提示 Modal -->
+<view wx:if="{{showSuccessModal}}">
+  <view class="modal-mask" bindtap="closeModal" />
+  <view class="modal-content">
+    <text class="modal-title">转换成功</text>
+    <view style="margin-top: 20rpx;">
+      <text>点击下方链接复制到浏览器下载：</text>
+    </view>
+    <view style="margin-top: 10rpx;">
+      <text bindtap="copyLink" style="color: #007aff; text-decoration: underline; font-weight: bold;">
+        {{fileName}}
+      </text>
+    </view>
+    <button style="margin-top: 30rpx;" type="primary" bindtap="closeModal">关闭</button>
+  </view>
+</view>
+
+</view>

@@ -9,8 +9,8 @@
         "pages/write/write",
         "pages/userinfo/userinfo",
         "pages/mydocument/mydocument",
-        "pages/tools/tools",
-        "components/pdf_to_word"
+        "pages/tools/tools"
+        
     ],
     "permission": {
         "scope.userInfo": {

@@ -1,52 +1,9 @@
 <view class="container">
-    <view wx:if="{{functionType === 'pdfToWord'}}" class="pdf-word-wrapper">
-  <!-- 提示区域 -->
-  <view class="tips">
-    ⚠️ 请选择小于 10MB 的 PDF 文件进行转换。
+  <view wx:if="{{functionType === 'pdfToWord'}}" class="pdf-word-wrapper">
+    <pdf-to-word />
   </view>
-
-  <!-- 文件列表 -->
-  <view class="file-list">
-    <block wx:for="{{fileList}}" wx:key="index">
-      <view class="file-item" bindtap="openFile" data-path="{{item.path}}" data-name="{{item.name}}">
-        <image src="/static/images/icon/office-word.png" class="file-icon" mode="aspectFit" />
-        <text class="file-name">{{ item.name }}</text>
-      </view>
-    </block>
-  </view>
-
-  <!-- 选择按钮 -->
-  <view class="bottom-btn">
-    <van-button type="primary" block bindtap="chooseFile">选择 PDF 文件</van-button>
-  </view>
-</view>
-
-  
-  <view wx:if="{{functionType === 'anotherFunction'}}">
-    <text>这是其他功能</text>
-    <!-- 在这里放置其他功能的具体实现 -->
-  </view>
-  
   <view wx:else>
-    <!-- <text>默认展示内容</text> -->
-    <!-- 默认展示的内容 -->
   </view>
-
-  <view wx:if="{{showSuccessModal}}">
-  <view class="modal-mask" bindtap="closeModal" />
-  <view class="modal-content">
-    <text class="modal-title">转换成功</text>
-
-    <view style="margin-top: 20rpx;">
-      <text>点击下方链接复制到浏览器下载：</text>
-    </view>
-    <view style="margin-top: 10rpx;">
-      <text bindtap="copyLink" style="color: #007aff; text-decoration: underline; font-weight: bold;">
-        {{fileName}}
-      </text>
-    </view>
-    <button style="margin-top: 30rpx;" type="primary" bindtap="closeModal">关闭</button>
-  </view>
-</view>
+  
 
 </view>
