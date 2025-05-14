@@ -1,5 +1,5 @@
-// const api = 'http://192.168.31.116:8000'
-const api = 'https://www.iamxiaogang.fun/miniprogram'
+const api = 'http://192.168.31.116:8000/miniprogram'
+// const api = 'https://www.iamxiaogang.fun/miniprogram'
 
 module.exports = {
     root:api,
@@ -13,6 +13,9 @@ module.exports = {
     comment:api+'/document/comment/',
     knowledge:api+'/knowledge/',
     konw_comment:api+'/knowledge/comment/',
-    pdftoword:api+'/tools/pdftoword/'
+    pdftoword:api+'/tools/pdftoword/',
+    mergepdf:api+'/tools/merge_pdfs/',
+    updatepdf:api+'/tools/upload_pdf/',
+    banners:api+'/tools/banners/'
 
 }

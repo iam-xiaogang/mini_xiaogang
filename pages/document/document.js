@@ -11,7 +11,7 @@ Page({
   },
   goToDetail: function (e) {
     const articleId = e.currentTarget.dataset.id;
-    console.log(articleId)
+    
     wx.navigateTo({
       url: `/pages/detail/detail?id=${articleId}&&type=document`
     
@@ -40,7 +40,7 @@ Page({
         page: this.data.page + 1
       });
     } catch (err) {
-      console.error('请求失败', err);
+      
       this.setData({ loading: false });
     }
   },
@@ -54,7 +54,7 @@ Page({
       }).then(res => {
         if (res.statusCode >= 200 && res.statusCode <= 300) {
             const newItems = res.data.results || res.data; // 若无分页器就直接用 res.data
-            console.log(newItems)
+            
         
           const allItems = this.data.items.concat(newItems);
     
@@ -64,7 +64,7 @@ Page({
             hasMore: newItems.length >= pageSize,
             page: page + 1
           });
-          console.log(this.data.items)
+          
         }
       }).catch(err=>{
         this.setData({ loading: false });
@@ -75,7 +75,7 @@ Page({
   
   goToWrite() {
       const token = wx.getStorageSync('access_token')
-      console.log(token)
+      
       if(!token){
           wx.showToast({
             title: '请先登录',

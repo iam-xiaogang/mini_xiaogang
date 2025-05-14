@@ -1,13 +1,27 @@
 import api from '../../config/setting'
+const request = require('../../utils/request')
 Page({
     data:{
-        banner_list:[{img:'/static/images/banner/1.jpg'}],
+        banner_list:[],
         notice:'demo'
 
     },
+    getbanner(){
+        request({
+            url:api.banners,
+        }).then(res=>{
+            
+            this.setData({
+                banner_list:res.data.results
+            })
+        })
+    },
+    onLoad(){
+        this.getbanner()
+    },
     onShow() {
         let userinfo = wx.getStorageSync('userInfo');
-        console.log(userinfo);
+       
         if (userinfo) {
             this.setData({
                 notice: userinfo.username
@@ -16,8 +30,7 @@ Page({
     },
     goToPage(e) {
         const type = e.currentTarget.dataset.type;
-        console.log(e.currentTarget.dataset) 
-        console.log(type) // 获取功能类型
+        console.log(type)
         wx.navigateTo({
           url: `/pages/tools/tools?type=${type}`  // 跳转并传参
         });

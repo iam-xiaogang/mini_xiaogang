@@ -17,7 +17,7 @@ Page({
     getinfo(){
         wx.login({
           success: (res) => {
-            console.log(res)
+            
           },
         })
     },
@@ -29,7 +29,7 @@ Page({
         wx.getUserProfile({
           desc: '用于完善用户资料',
           success: (res) => {
-              console.log(res.userInfo)
+              
             const { nickName, avatarUrl } = res.userInfo;
     
             this.setData({
@@ -37,7 +37,7 @@ Page({
               avatarUrl: avatarUrl,
               isLoggedIn: true
             });
-           console.log(this.data.userName,this.data.avatar)
+           
             // 你可以选择这里直接请求后端绑定用户信息
             wx.request({
               url: 'https://your-api.example.com/update_userinfo', // 替换为你的后端地址
@@ -90,16 +90,17 @@ Page({
         const userInfo = wx.getStorageSync('userInfo');
         const token = wx.getStorageSync('access_token')
         if (userInfo && token) {
+            
             this.setData({
-                avatarUrl: userInfo.avatar_url,
-                userName: userInfo.username,
-                address: userInfo.address,
+                avatarUrl: userInfo.avatar_url?userInfo.avatar_url:'/static/images/icon/avatar.png',
+                userName: userInfo.username?userInfo.username:'匿名小可爱',
+                address: userInfo.address?userInfo.address:'中国',
                 phone: userInfo.phone,
                 isLoggedIn: true
             });
         } else {
             this.setData({
-                avatarUrl: '/static/images/avatar/1.jpg',
+                avatarUrl: '/static/images/icon/avatar.png',
                 userName: '请登录',
                 address: '*******',
                 phone: '**********',

@@ -1,5 +1,7 @@
 {
     "usingComponents": {
-        "pdf-to-word": "/components/pdf_to_word/pdf_to_word"
+        "pdf-to-word": "/components/pdf_to_word/pdf_to_word",
+        "pdfadd":"/components/pdfmarge/pdfmarge",
+        "pic_to_pdf":"/components/pic_to_pdf/pic_to_pdf"
     }
 }

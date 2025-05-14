@@ -1,7 +1,7 @@
 // components/pdf_to_word/pdf_to_word.js
 const utils = require('../../utils/utils')
 import api from '../../config/setting';
-console.log(api.pdftoword)
+
 Component({
 
     /**
@@ -60,7 +60,7 @@ Component({
                 fail: (err) => {
                     utils.Toast('请选择文件', 1500, 'none');
     
-                    console.error(err);
+                    
                 }
             });
         },
@@ -70,7 +70,7 @@ Component({
                 title: '上传中',
                 mask: true
             })
-            console.log(api.pdftoword)
+         
             wx.uploadFile({
                 url: api.pdftoword, // 替换为实际后端接口
                 filePath: filePath,
@@ -82,7 +82,7 @@ Component({
                 success: (uploadRes) => {
                     const data = JSON.parse(uploadRes.data);
                     if (data.word_url) {
-                        console.log(data.word_url)
+                        
     
                         utils.Toast('转换成功', 1500, 'success')
                         this.setData({
@@ -91,7 +91,7 @@ Component({
                         });
     
                         // 提供下载
-                        console.log(this.data.wordUrl)
+                        
                         this.downloadFile(data.word_url);
                     } else {
                         utils.Toast('上传失败', 1500, 'fail')
@@ -99,7 +99,7 @@ Component({
                 },
                 fail: (err) => {
                     utils.Toast('上传失败', 1500, 'fail')
-                    console.error(err);
+                    
                 }
             });
         },
@@ -117,7 +117,6 @@ Component({
         downloadFile(url) {
             const info = wx.getStorageSync('userInfo')
             let name = info.username.replace(/[\p{P}\p{S}]/gu, "");
-            
             let timestamp = utils.getFormattedTime()
             const fileName = `${name}_${timestamp}.docx`;
             this.setData({fileName:fileName})
@@ -146,27 +145,25 @@ Component({
                 },
                 fail: (err) => {
                     utils.Toast('下载失败', 1500, 'fail')
-                    console.error('下载失败', err);
+                    
                 }
             });
         },
         openFile(e) {
             const filePath = e.currentTarget.dataset.path;
-            console.log(filePath)
             const fileType = filePath.split('.').pop(); // 提取后缀名
-    
             wx.openDocument({
                 filePath: filePath,
                 fileType: fileType,
                 success: () => {
-                    console.log('打开文档成功');
+                    utils.Toast('打开文档成功',1500,'none');
                 },
                 fail: (err) => {
                     wx.showToast({
                         title: '打开失败',
                         icon: 'none'
                     });
-                    console.error('打开文档失败', err);
+                    utils.Toast('打开文档失败', 1500,'none');
                 }
             });
         }

@@ -49,7 +49,7 @@ Page({
         }
         const requiredFields = ['title', 'summary', 'content', 'tempImagePath'];
         for (let field of requiredFields) {
-            console.log(field)
+            
             if (!this.data[field]) {
                 wx.showToast({
                     title: requiredFieldsdict[field],
@@ -78,7 +78,7 @@ Page({
                 this.submitArticle(art_img_url);
             },
             fail: (err) => {
-                console.error('图片上传失败', err);
+                
                 wx.showToast({
                     title: '图片上传失败',
                     icon: 'none'
@@ -132,7 +132,7 @@ Page({
                 }, 3000);
             }
         }).catch(err=>{
-            console.error('发布失败', err);
+            
                 wx.showToast({
                     title: '发布失败',
                     icon: 'none'

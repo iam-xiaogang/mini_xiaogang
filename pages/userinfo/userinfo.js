@@ -25,11 +25,11 @@ Page({
             userInfo:userinfo
         })
         
-        console.log(userinfo)
+    
     },
     onChooseAvatar(e) {
       const avatarUrl = e.detail.avatarUrl
-      console.log(avatarUrl)
+      
       this.setData({
         'userInfo.avatar_url': avatarUrl
       })
@@ -54,7 +54,7 @@ Page({
               this.onSubmit(); // 上传成功后再提交更新
             },
             fail: (err) => {
-              console.error('图片上传失败', err);
+              
               wx.showToast({
                 title: '头像上传失败',
                 icon: 'none'
@@ -71,7 +71,7 @@ Page({
     onSubmit() {
       const token = wx.getStorageSync('access_token') || ''
       delete this.data.userInfo.avatar
-      console.log(this.data.userInfo)
+      
       request({
         url: api.update,
         method: 'post',

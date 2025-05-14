@@ -17,7 +17,7 @@ Page({
         method: 'GET',
         success: (res) => {
           if (res.statusCode === 200) {
-              console.log(res.data)
+              
             const data = res.data.results.map(cat => ({
               ...cat,
 

@@ -116,7 +116,7 @@ Page({
                 this.setData({
                     tempcode:res.code
                 })
-                console.log('hello',this.data.tempcode)
+               
             }
           
         request({

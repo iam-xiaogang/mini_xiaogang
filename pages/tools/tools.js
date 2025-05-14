@@ -13,7 +13,7 @@ Page({
         this.setData({
             functionType: type 
         });
-        this.loadFileList()
+        
     },
 
 

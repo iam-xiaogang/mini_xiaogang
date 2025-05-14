@@ -13,12 +13,12 @@ Page({
 
     onLoad(options) {
         const id = options.id;
-        console.log(options.type)
+        
         this.setData({
             file_type:options.type
         })
         
-        console.log(id)
+        
         this.getArticleDetail(id);
         this.getComments(id);
     },
@@ -30,7 +30,7 @@ Page({
         }else{
             url = api.knowledge
         }
-        console.log(url)
+        
         return url
     },
     getArticleDetail(id) {
@@ -45,7 +45,7 @@ Page({
                 this.setData({
                     article: res.data
                 });
-                console.log(res.data)
+                
             }
           })
        
@@ -69,7 +69,7 @@ Page({
                             comment.timestamp = utils.formatTimeAgo(comment.timestamp);
                         });
 
-                        console.log(res.data.results)
+                        
                         this.setData({
                             comments: res.data.results
                         });
@@ -79,7 +79,7 @@ Page({
                             tryRequest(); 
                             
                         }).catch(err => {
-                            console.log(err)
+                            
                             wx.showToast({
                                 title: '请重新登录',
                                 icon: 'none'
@@ -131,7 +131,7 @@ Page({
                 content: content
             },
           }).then(res => {
-              console.log(res.statusCode)
+              
             if (res.statusCode >= 200 && res.statusCode < 300) {
                 wx.showToast({
                     title: '评论成功'
