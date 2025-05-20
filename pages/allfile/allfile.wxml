@@ -1,0 +1,15 @@
+<view class="section-header">
+    <text class="section-title">📄 文件列表</text>
+  <view class="spacer" />
+  <!-- <button class="clear-btn" size="mini" bindtap="clearResultList">清空</button> -->
+
+</view>
+<view class="file-list">
+  <block wx:for="{{resultList}}" wx:key="index">
+    <view class="file-item" bindtap="openFile" data-path="{{item.path}}">
+      <image src="/static/images/icon/docx.png" class="file-icon" mode="aspectFit" />
+      <text class="file-name">{{ item.name }}</text>
+    </view>
+  </block>
+  <view wx:if="{{resultList.length === 0}}" class="empty-text">暂无文件</view>
+</view>

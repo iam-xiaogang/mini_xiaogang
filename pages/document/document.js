@@ -49,7 +49,8 @@ Page({
   getMockData: function (page) {
     const pageSize = 10;
     request({
-        url: `${api.document}?page=${page}&page_size=${pageSize}`,
+        // url: `${api.document}?page=${page}&page_size=${pageSize}`,
+        url:`${api.document}`,
       method: 'GET',
       }).then(res => {
         if (res.statusCode >= 200 && res.statusCode <= 300) {

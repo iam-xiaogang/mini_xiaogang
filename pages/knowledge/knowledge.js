@@ -4,14 +4,26 @@ import api from '../../config/setting'
 Page({
     data: {
       categories: [], // 分类及文章数据
-      activeNames: [] // 控制展开状态
+      activeNames: [], // 控制展开状态
+      loading:true
     },
-  
+    onReady(){
+        // this.fetchCategoriesWithArticles();
+        // this.setData({
+        //     loading:false
+        //   })
+    },
     onLoad() {
+        
       this.fetchCategoriesWithArticles();
+      
     },
   
     fetchCategoriesWithArticles() {
+      wx.showLoading({
+        title: ' loading',
+        mask:true
+      })
       wx.request({
         url: api.knowledge, // 后端接口地址
         method: 'GET',
@@ -32,6 +44,9 @@ Page({
         },
         fail: () => {
           wx.showToast({ title: '加载失败', icon: 'none' });
+        },
+        complete:()=>{
+            wx.hideLoading();
         }
       });
     },

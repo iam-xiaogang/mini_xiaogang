@@ -21,6 +21,7 @@ Page({
           },
         })
     },
+    
     removeinfo(){
         wx.removeStorageSync('access_token');
         wx.removeStorageSync('refresh_token');
@@ -71,17 +72,17 @@ Page({
         });
     },
     onSettingsClick() {
-        const userInfo = wx.getStorageSync('userInfo');
-        if (userInfo && userInfo.token) {
+        // const userInfo = wx.getStorageSync('userInfo');
+        // if (userInfo ) {
             wx.navigateTo({
                 url: '/pages/setting/setting',
             })
-        } else {
-            wx.showToast({
-                title: '请先登录',
-                icon: 'none'
-            });
-        }
+        // } else {
+        //     wx.showToast({
+        //         title: '请先登录',
+        //         icon: 'none'
+        //     });
+        // }
 
     },
 
@@ -101,7 +102,7 @@ Page({
         } else {
             this.setData({
                 avatarUrl: '/static/images/icon/avatar.png',
-                userName: '请登录',
+                userName: 'HI',
                 address: '*******',
                 phone: '**********',
                 isLoggedIn: false
@@ -116,19 +117,23 @@ Page({
     },
     // 我的文章点击事件
     onArticleClick() {
-        const userInfo = wx.getStorageSync('userInfo');
-        const token = wx.getStorageSync('access_token')
-        if (userInfo && token) {
-            wx.navigateTo({
-                url: '/pages/mydocument/mydocument' // 替换成实际的页面路径
-            });
-        } else {
-            wx.showToast({
-                title: '请先登录',
-                icon: 'none'
-            });
+        // const userInfo = wx.getStorageSync('userInfo');
+        // const token = wx.getStorageSync('access_token')
+        // if (userInfo && token) {
+        //     wx.navigateTo({
+        //         url: '/pages/mydocument/mydocument' // 替换成实际的页面路径
+        //     });
+        // } else {
+        //     wx.showToast({
+        //         title: '请先登录',
+        //         icon: 'none'
+        //     });
 
-        }
+        // }
+        wx.navigateTo({
+                    url: '/pages/allfile/allfile' // 替换成实际的页面路径
+                });
+
     },
 
     // 我的信息点击事件

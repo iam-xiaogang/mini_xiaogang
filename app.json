@@ -2,6 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/my/my",
+        "pages/setting/setting",
         "pages/document/document",
         "pages/knowledge/knowledge",
         "pages/phonelogin/phonelogin",
@@ -9,7 +10,8 @@
         "pages/write/write",
         "pages/userinfo/userinfo",
         "pages/mydocument/mydocument",
-        "pages/tools/tools"
+        "pages/tools/tools",
+        "pages/allfile/allfile"
         
     ],
     "permission": {
@@ -37,7 +39,9 @@
         "van-image": "@vant/weapp/image/index",
         "van-collapse": "@vant/weapp/collapse/index",
         "van-collapse-item": "@vant/weapp/collapse-item/index",
-        "van-divider": "@vant/weapp/divider/index"
+        "van-divider": "@vant/weapp/divider/index",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "van-skeleton": "@vant/weapp/skeleton/index"
     },
     "tabBar": {
         "list": [
@@ -47,15 +51,10 @@
                 "iconPath": "/static/images/icon/index.png",
                 "selectedIconPath": "/static/images/icon/index_select.png"
             },
-            {
-                "pagePath": "pages/document/document",
-                "text": "分享",
-                "iconPath": "/static/images/icon/share.png",
-                "selectedIconPath": "/static/images/icon/share_select.png"
-            },
+           
             {
                 "pagePath": "pages/knowledge/knowledge",
-                "text": "知识",
+                "text": "笔记",
                 "iconPath": "/static/images/icon/knowledge.png",
                 "selectedIconPath": "/static/images/icon/knowledge_select.png"
             },

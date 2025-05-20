@@ -5,8 +5,8 @@
   <view wx:if="{{functionType === 'pdfadd'}}" class="pdf-word-wrapper">
     <pdfadd />
   </view>
-  <view wx:if="{{functionType === 'pictopdf'}}" class="pdf-word-wrapper">
-    <pictopdf />
+  <view wx:if="{{functionType === 'img_to_word'}}" class="pdf-word-wrapper">
+    <img_to_word />
   </view>
   <view wx:else>
   </view>

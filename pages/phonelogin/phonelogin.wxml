@@ -12,6 +12,6 @@
       wx:else
       disabled="true">剩余 {{countdown}} 秒</button>
   </view>
-  <text>手机号随便输吧,验证码是  000000,腾讯短信接口审核太慢了</text>
+  <!-- <text>手机号随便输吧,验证码是  000000,腾讯短信接口审核太慢了</text> -->
   <button class="login-btn" bindtap="login">登录</button>
 </view>

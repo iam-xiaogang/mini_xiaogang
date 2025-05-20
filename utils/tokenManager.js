@@ -59,7 +59,8 @@ function clearTokenAndRedirect() {
   wx.removeStorageSync('access_token')
   wx.removeStorageSync('refresh_token')
   wx.showToast({
-    title: '身份过期，请重新登录',
+    // title: '身份过期，请重新登录',
+    title:'',
     icon: 'none',
     duration: 1500
   })

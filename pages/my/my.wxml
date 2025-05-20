@@ -16,26 +16,27 @@
 
     <!-- 下半部分 Cell 列表 -->
     <view class="cell-list">
-        <van-cell title="我的文章" value="" is-link bind:click="onArticleClick" />
-        <van-cell title="我的信息" value="" is-link bind:click="onInfoClick" />
+        <van-cell title="我的文件" value="" is-link bind:click="onArticleClick" />
+        <!-- <van-cell title="我的信息" value="" is-link bind:click="onInfoClick" /> -->
+        <!-- <van-cell title="设置" value="" is-link bind:click="onSettingsClick" /> -->
     </view>
 
 
-    <button bind:tap="removeinfo">removeinfo</button>
+    <!-- <button bind:tap="removeinfo">removeinfo</button> -->
     <view class="fab">
         <button class="fab-icon" open-type="contact">
             <image class="fab-image" src="/static/images/icon/custom.png" mode="aspectFit" />
         </button>
     </view>
-    <view wx:if="{{!isLoggedIn}}" class="login-btn-wrapper">
+    <!-- <view wx:if="{{!isLoggedIn}}" class="login-btn-wrapper"> -->
 
-        <van-button type="primary" size="large" class="login-btn" bind:click="onQuickLogin">
+        <!-- <van-button type="primary" size="large" class="login-btn" bind:click="onQuickLogin">
             快速登录
-        </van-button>
+        </van-button> -->
 
-        <van-button type="default" size="large" class="login-btn" bind:click="onPhoneLogin">
+        <!-- <van-button type="primary" size="large" class="login-btn" bind:click="onPhoneLogin">
             手机号登录
         </van-button>
 
-    </view>
+    </view> -->
 </view>

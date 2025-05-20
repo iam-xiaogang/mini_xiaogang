@@ -1,0 +1,32 @@
+<view class="setting-page">
+  <!-- 用户账号 -->
+  <view class="setting-group">
+    <view class="setting-item" bindtap="goToAccount">
+      <text class="setting-title">账号与安全</text>
+      <image src="/static/images/icon/jiantou.png" class="arrow-icon" />
+    </view>
+  </view>
+
+  <!-- 隐私与通用 -->
+  <view class="setting-group">
+    <view class="setting-item" bindtap="goToPrivacy">
+      <text class="setting-title">隐私</text>
+      <image src="/static/images/icon/jiantou.png" class="arrow-icon" />
+    </view>
+    <view class="setting-item" bindtap="clearCache">
+      <text class="setting-title">清除缓存</text>
+      <image src="/static/images/icon/jiantou.png" class="arrow-icon" />
+    </view>
+  </view>
+
+  <!-- 关于和退出登录 -->
+  <view class="setting-group">
+    <view class="setting-item" bindtap="goToAbout">
+      <text class="setting-title">关于我们</text>
+      <image src="/static/images/icon/jiantou.png" class="arrow-icon" />
+    </view>
+    <view class="setting-item logout-item" bindtap="logout">
+      <text class="logout-text">退出登录</text>
+    </view>
+  </view>
+</view>

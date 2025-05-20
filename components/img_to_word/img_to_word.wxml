@@ -1,0 +1,71 @@
+<view class="page-wrapper">
+
+<!-- 提示区域 -->
+<view class="tips">
+  ⚠️ 如果上传的图片文字不是正向的，请剪裁调整正向后在上传,四周不要留空白，让文字布满照片
+</view>
+
+<!-- 上传的文件列表 -->
+<view class="section-header">
+  <text class="section-title">📤 已上传图片列表</text>
+  <view class="spacer" />
+  <button class="clear-btn" size="mini" bindtap="clearFileList">清空</button>
+</view>
+<view class="file-list">
+  <block wx:for="{{fileList}}" wx:key="index">
+    <view class="file-item"  data-path="{{item.path}}" data-name="{{item.name}}">
+      <image wx:if="{{item.type === 'image'}}" src="{{item.path}}" class="file-icon" mode="aspectFill" />
+      <image wx:if="{{item.type === 'pdf'}}" src="/static/images/icon/PDF.png" class="file-icon" mode="aspectFit" />
+      <text class="file-name">{{ item.name }}</text>
+      <!-- 删除图标 -->
+      <image class="delete-icon" src="/static/images/icon/delete.png" bindtap="deleteFile" data-index="{{index}}" />
+    </view>
+  </block>
+  <view wx:if="{{fileList.length === 0}}" class="empty-text">暂无上传的图片</view>
+</view>
+
+<!-- 生成的合并文件列表 -->
+<view class="section-header">
+    <text class="section-title">📄 生成图片列表</text>
+  <view class="spacer" />
+  <button class="clear-btn" size="mini" bindtap="clearResultList">清空</button>
+
+</view>
+<view class="file-list">
+  <block wx:for="{{resultList}}" wx:key="index">
+    <view class="file-item" bindtap="openFile" data-path="{{item.path}}">
+      <image src="/static/images/icon/docx.png" class="file-icon" mode="aspectFit" />
+      <text class="file-name">{{ item.name }}</text>
+    </view>
+  </block>
+  <view wx:if="{{resultList.length === 0}}" class="empty-text">暂无转换结果</view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="bottom-btn-fixed">
+  <view class="button-row-right">
+    <van-button type="primary" size="large" custom-class="small-btn" bindtap="chooseFiles">选择 图片</van-button>
+    <van-button type="success" size="large" custom-class="small-btn" bindtap="uploadFile" >转换 图片</van-button>
+  </view>
+</view>
+
+
+
+<!-- 成功提示 Modal -->
+<view wx:if="{{showSuccessModal}}">
+  <view class="modal-mask" bindtap="closeModal" />
+  <view class="modal-content">
+    <text class="modal-title">合并成功</text>
+    <view style="margin-top: 20rpx;">
+      <text>点击下方链接复制到浏览器下载：</text>
+    </view>
+    <view style="margin-top: 10rpx;">
+      <text bindtap="copyLink" style="color: #007aff; text-decoration: underline; font-weight: bold;">
+        {{fileName}}
+      </text>
+    </view>
+    <button style="margin-top: 30rpx;" type="primary" bindtap="closeModal">关闭</button>
+  </view>
+</view>
+
+</view>

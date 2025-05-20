@@ -121,10 +121,10 @@ Component({
           
           
         downloadFile(url) {
-            const info = wx.getStorageSync('userInfo')
-            let name = info.username.replace(/[\p{P}\p{S}]/gu, "");
+            // const info = wx.getStorageSync('userInfo')
+            // let name = info.username.replace(/[\p{P}\p{S}]/gu, "");
             let timestamp = utils.getFormattedTime()
-            const fileName = `${name}_${timestamp}.pdf`;
+            const fileName = `${timestamp}.pdf`;
             this.setData({fileName:fileName})
             wx.downloadFile({
                 url: url,

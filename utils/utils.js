@@ -15,7 +15,7 @@ function formatChineseDate(isoString) {
   function relogin() {
     wx.removeStorageSync('access_token');
     wx.removeStorageSync('refresh_token');
-    wx.showToast({ title: '请重新登录', icon: 'none' });
+    // wx.showToast({ title: '请重新登录', icon: 'none' });
     
     // 跳转到登录页面（假设是 /pages/login/login）
     setTimeout(() => {
