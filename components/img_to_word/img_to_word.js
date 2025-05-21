@@ -179,6 +179,7 @@ Component({
             wx.downloadFile({
                 url: url,
                 success: (res) => {
+                    console.log(res)
                     if (res.statusCode === 200) {
                         wx.showToast({
                             title: '下载成功',
@@ -188,7 +189,8 @@ Component({
                         const files = wx.getStorageSync('savedFiles') || [];
                         files.push({
                             name: fileName,
-                            path: res.tempFilePath
+                            path: res.tempFilePath,
+                            type:'WORD'
                         });
                         wx.setStorageSync('savedFiles', files);
                         this.loadFileList();

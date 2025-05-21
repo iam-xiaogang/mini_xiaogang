@@ -1,4 +1,5 @@
 // pages/allfile/allfile.js
+const utils = require('../../utils/utils')
 Page({
 
     /**
@@ -14,7 +15,7 @@ Page({
     onLoad(options) {
      const allfile = wx.getStorageSync('savedFiles')
      this.setData({
-         resultList:allfile
+        resultList:allfile
      })
     },
     openFile(e) {

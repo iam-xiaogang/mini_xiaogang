@@ -1,6 +1,6 @@
 // const api = 'http://192.168.31.116:8000/miniprogram'
 const api = 'https://www.iamxiaogang.fun/miniprogram'
-
+console.log(api)
 module.exports = {
     root:api,
     refresh:api+'/users/refresh/',
@@ -17,7 +17,8 @@ module.exports = {
     mergepdf:api+'/tools/merge_pdfs/',
     updatepdf:api+'/tools/upload_pdf/',
     imgtoword:api+'/tools/img_to_word/',
-    banners:api+'/tools/banners/'
+    banners:api+'/tools/banners/',
+    notices:api+'/tools/notices/'
 
 }
 

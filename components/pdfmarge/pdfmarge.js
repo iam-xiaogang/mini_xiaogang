@@ -138,7 +138,8 @@ Component({
                         const files = wx.getStorageSync('savedFiles') || [];
                         files.push({
                             name: fileName,
-                            path: res.tempFilePath
+                            path: res.tempFilePath,
+                            type:'PDF'
                         });
                         wx.setStorageSync('savedFiles', files);
                         this.loadPdfFile();
@@ -148,6 +149,7 @@ Component({
                     }
                 },
                 fail: (err) => {
+                    console.log(err)
                     utils.Toast('下载失败', 1500, 'fail')
                     
                 }

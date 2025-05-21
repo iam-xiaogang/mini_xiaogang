@@ -1,5 +1,6 @@
 {
     "usingComponents": {
       "van-notice-bar": "@vant/weapp/notice-bar/index"
-    }
+    },
+    "navigationBarTitleText": "我的工具箱"
   }

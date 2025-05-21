@@ -2,23 +2,13 @@
     "pages": [
         "pages/index/index",
         "pages/my/my",
-        "pages/setting/setting",
-        "pages/document/document",
         "pages/knowledge/knowledge",
-        "pages/phonelogin/phonelogin",
         "pages/detail/detail",
-        "pages/write/write",
-        "pages/userinfo/userinfo",
         "pages/mydocument/mydocument",
         "pages/tools/tools",
         "pages/allfile/allfile"
-        
     ],
-    "permission": {
-        "scope.userInfo": {
-            "desc": "用于完善用户资料"
-        }
-    },
+    
     "window": {
         "navigationBarTitleText": "xiaogang",
         "navigationBarBackgroundColor": "#C0C0C0",
@@ -51,7 +41,6 @@
                 "iconPath": "/static/images/icon/index.png",
                 "selectedIconPath": "/static/images/icon/index_select.png"
             },
-           
             {
                 "pagePath": "pages/knowledge/knowledge",
                 "text": "笔记",

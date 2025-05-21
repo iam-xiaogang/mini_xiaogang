@@ -3,8 +3,20 @@ const request = require('../../utils/request')
 Page({
     data:{
         banner_list:[],
-        notice:'demo'
+        notice:''
 
+    },
+    getnotice(){
+        request({
+            url:api.notices
+        }).then(res=>{
+          
+            let data = res.data.results
+
+            this.setData({
+                notice:data[0].title
+            })
+        })
     },
     getbanner(){
         request({
@@ -18,6 +30,7 @@ Page({
     },
     onLoad(){
         this.getbanner()
+        this.getnotice()
     },
     onShow() {
         let userinfo = wx.getStorageSync('userInfo');

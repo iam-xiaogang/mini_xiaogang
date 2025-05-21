@@ -134,7 +134,8 @@ Component({
                         const files = wx.getStorageSync('savedFiles') || [];
                         files.push({
                             name: fileName,
-                            path: res.tempFilePath
+                            path: res.tempFilePath,
+                            type:'WORD'
                         });
                         wx.setStorageSync('savedFiles', files);
                         this.loadFileList();
