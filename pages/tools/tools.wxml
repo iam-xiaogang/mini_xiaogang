@@ -1,3 +1,4 @@
+
 <view class="container">
   <view wx:if="{{functionType === 'pdfToWord'}}" class="pdf-word-wrapper">
     <pdf-to-word />
@@ -8,6 +9,16 @@
   <view wx:if="{{functionType === 'img_to_word'}}" class="pdf-word-wrapper">
     <img_to_word />
   </view>
+  <view wx:if="{{functionType === 'tianzige'}}" class="page-container">
+    <tianzige />
+  </view>
+  <view wx:if="{{functionType === 'suanshu'}}" class="page-container">
+    <suanshu />
+  </view>
+  <view wx:if="{{functionType === 'mathproblems'}}" class="page-container">
+    <mathproblems />
+  </view>
+  
   <view wx:else>
   </view>
   

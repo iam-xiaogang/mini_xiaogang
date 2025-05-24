@@ -5,8 +5,15 @@ Page({
     data: {
       categories: [], // 分类及文章数据
       activeNames: [], // 控制展开状态
-      loading:true
+      loading:true,
+      activeId: null
     },
+    toggleCollapse(e) {
+        const id = e.currentTarget.dataset.id;
+        this.setData({
+          activeId: this.data.activeId === id ? null : id
+        });
+      },
     onReady(){
         // this.fetchCategoriesWithArticles();
         // this.setData({

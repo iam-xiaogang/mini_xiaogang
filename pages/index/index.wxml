@@ -1,35 +1,51 @@
+<view class="custom-navbar">
+  <text class="gradient-title">我的工具箱</text>
+</view>
+
+
 <view class="container">
 
-<!-- 顶部 Banner -->
+<!-- 轮播图 -->
 <view class="banner">
   <swiper autoplay circular indicator-dots indicator-color="#fff" interval="3000">
     <swiper-item wx:for="{{banner_list}}" wx:key="*this">
       <image src="{{item.img}}" mode="aspectFill" class="banner-image"/>
     </swiper-item>
-   
   </swiper>
 </view>
 
-<!-- 滚动通知栏 -->
+<!-- 公告栏 -->
 <view class="notice">
   <van-notice-bar left-icon="volume-o" text="{{notice}}" />
 </view>
 
-<!-- 九宫格菜单 -->
-<view class="card">
-  <van-grid column-num="3" gutter="20">
+<!-- Office 工具模块 -->
+<view class="module">
+  <view class="module-title">工具</view>
+  <van-grid column-num="3" gutter="15">
     <van-grid-item icon="/static/images/icon/office-word.png" text="PDF转WORD" bindtap="goToPage" data-type="pdfToWord"/>
     <van-grid-item icon="/static/images/icon/PDF.png" text="PDF拼接" bindtap="goToPage" data-type="pdfadd"/>
     <van-grid-item icon="/static/images/icon/pictures.png" text="图片转WORD" bindtap="goToPage" data-type="img_to_word"/>
-    <!-- <van-grid-item icon="/static/images/card/睡觉.png" text="语音识别" bindtap="getvideo"/>
-    <van-grid-item icon="/static/images/card/记笔记.png" text="心率检测" bindtap="heart"/>
-    <van-grid-item icon="/static/images/card/读书.png" text="商城" bindtap="shop"/>
-    <van-grid-item icon="/static/images/card/睡觉.png" text="语音识别" bindtap="getvideo"/>
-    <van-grid-item icon="/static/images/card/记笔记.png" text="心率检测" bindtap="heart"/>
-    <van-grid-item icon="/static/images/card/读书.png" text="商城" bindtap="shop"/> -->
   </van-grid>
 </view>
 
-<!-- 底部功能按钮 -->
+<!-- 练字模块 -->
+<view class="module">
+  <view class="module-title">练字</view>
+  <van-grid column-num="3" gutter="15">
+    <van-grid-item icon="/static/images/icon/pen.png" text="田字格生成" bindtap="goToPage" data-type="tianzige"/>
+    <van-grid-item icon="/static/images/icon/brush.png" text="毛笔字生成" bindtap="goToPage" data-type="maobizi"/>
+    <van-grid-item icon="/static/images/icon/brush.png" text="空白字帖" bindtap="goToPage" data-type="zitiebg"/>
+  </van-grid>
+</view>
+
+<view class="module">
+  <view class="module-title">数学</view>
+  <van-grid column-num="3" gutter="15">
+    <van-grid-item icon="/static/images/icon/math.png" text="算数" bindtap="goToPage" data-type="suanshu"/>
+    <van-grid-item icon="/static/images/icon/math2.png" text="应用" bindtap="goToPage" data-type="mathproblems"/>
+    <van-grid-item icon="/static/images/icon/math1.png" text="图形" bindtap="goToPage" data-type="zitiebg"/>
+  </van-grid>
+</view>
 
 </view>

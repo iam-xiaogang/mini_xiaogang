@@ -138,8 +138,9 @@
     left: 0;
     width: 100%;
     padding: 20rpx;
-    background-color: #ffffff;
-    box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.05);
+    /* background-color: #ffffff; */
+    background-color: rgba(255, 255, 255, 0.0); /* 半透明白色 */
+    /* box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.05); */
   }
 
   .bottom-btn-fixed {
@@ -190,6 +191,7 @@
     font-size: 24rpx;
     padding: 0 16rpx;
     height: 48rpx;
+    width: 20%;
     line-height: 48rpx;
     border-radius: 8rpx;
     background-color: #f56c6c;

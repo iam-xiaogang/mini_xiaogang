@@ -1,4 +1,7 @@
 {
-    "usingComponents": {},
-    "navigationBarTitleText": "我的笔记"
+    "usingComponents": {
+        "custom-navbar":"/components/custom_navbar/custom_navbar"
+    },
+    "navigationBarTitleText": "我的笔记",
+    "navigationStyle": "custom"
 }

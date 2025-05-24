@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    background-color: #f7f7f7;
+  }
+  
+  /* 输入区域 */
+  .input-section {
+    flex: 0 0 20%;
+    position: relative;
+  }
+  .random-btn {
+    margin-top: 20rpx;
+    background-color: #ffa500;
+    color: white;
+    font-size: 28rpx;
+    padding: 20rpx 0;
+    border-radius: 10rpx;
+  }
+  .textarea {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 32rpx;
+    border: 1px solid #ccc;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  /* 图片区域 */
+  .image-section {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .result {
+    width: 100%;
+    text-align: center;
+  }
+  .tip {
+    font-size: 28rpx;
+    color: #666;
+    margin: 20rpx 0;
+  }
+  .image {
+    width: 100%;
+    border-radius: 10rpx;
+    border: 1px solid #ddd;
+  }
+  
+  /* 按钮区域 */
+  .button-section {
+    flex: 0 0 auto;
+    padding-top: 20rpx;
+  }
+  .btn {
+    width: 100%;
+    background-color: #007aff;
+    color: white;
+    padding: 24rpx 0;
+    font-size: 32rpx;
+    border-radius: 10rpx;
+  }
+  .fab {
+    position: fixed;
+    bottom: 40rpx;
+    right: 40rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background-color: #acafb3;
+    box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .fab-icon {
+    width: 100rpx;
+    height: 100rpx;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #7e8083;
+    box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.fab-image {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .counter {
+    text-align: right;
+    color: #888;
+    font-size: 26rpx;
+    margin: 10rpx 0 30rpx 0;
+  }
+  .picker-view {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    border: 1px solid #ccc;
+    border-radius: 10rpx;
+    background-color: #fff;
+    font-size: 28rpx;
+    color: #333;
+  }
+  

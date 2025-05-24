@@ -43,7 +43,14 @@ Page({
     },
     goToPage(e) {
         const type = e.currentTarget.dataset.type;
-        console.log(type)
+        if(type=='maobizi' || type=='zitiebg'){
+            wx.showToast({
+              title: '开发中.....',
+              icon:'none',
+              duration:1500
+                        })
+                        return
+        }
         wx.navigateTo({
           url: `/pages/tools/tools?type=${type}`  // 跳转并传参
         });

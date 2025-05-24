@@ -1,0 +1,44 @@
+<view class="container">
+  <!-- 输入区域：占40%高度 -->
+  
+  <view class="input-section">
+    
+    <textarea
+      class="textarea"
+      placeholder="请输入需要生成的文字，例如：我爱学习"
+      maxlength="500"
+      bindinput="onInput"
+      value="{{text}}" ></textarea>
+     
+  </view>
+  <view class="counter">字数：{{text.length}}/500</view>
+  <view><picker
+  mode="selector"
+  range="{{fontList}}"
+  value="{{selectedIndex}}"
+  bindchange="onFontChange"
+>
+  <view class="picker-view">当前字体：{{selectedFont}}</view>
+</picker>
+
+    <!-- 随机文本按钮 -->
+    <button class="random-btn" bindtap="generateRandomText">随机生成文本</button></view>
+
+  <!-- 图片区域：占中间 -->
+  <view class="image-section">
+    <view wx:if="{{image}}" class="result">
+      <text class="tip">生成结果：</text>
+      <image
+        class="image"
+        src="{{image}}"
+        mode="widthFix"
+        show-menu-by-longpress="true"
+      />
+    </view>
+  </view>
+
+  <!-- 按钮区域：固定底部 -->
+  <view class="button-section">
+    <button class="btn" bindtap="generateImage">生成田字格练字图</button>
+  </view>
+</view>

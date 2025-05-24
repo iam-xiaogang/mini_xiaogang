@@ -1,9 +1,16 @@
-<view class="page-container">
-    
-    
-  <van-collapse value="{{ activeNames }}" bind:change="onChange">
-    <block wx:for="{{ categories }}" wx:key="id">
-      <van-collapse-item   title="{{ item.name }}" name="{{ item.id }}">
+<custom-navbar title="我的笔记" />
+
+<view class="container">
+  <block wx:for="{{ categories }}" wx:key="id">
+    <view class="collapse-item">
+      <!-- 分类标题 -->
+      <view class="collapse-header" bindtap="toggleCollapse" data-id="{{ item.id }}">
+        {{ item.name }}
+        <text class="arrow">{{ activeId === item.id ? '▲' : '▼' }}</text>
+      </view>
+
+      <!-- 展开内容 -->
+      <view wx:if="{{ activeId === item.id }}" class="collapse-body">
         <block wx:for="{{ item.articles }}" wx:key="id" wx:for-item="article">
           <view class="article-item" bindtap="goToDetail" data-id="{{ article.id }}">
             <view class="article-title">{{ article.title }}</view>
@@ -14,8 +21,8 @@
             </view>
           </view>
         </block>
-      </van-collapse-item>
-    </block>
-  </van-collapse>
-
+      </view>
+    </view>
+  </block>
 </view>
+

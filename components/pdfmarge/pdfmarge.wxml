@@ -1,66 +1,62 @@
 <view class="page-wrapper">
 
-<!-- 提示区域 -->
-<view class="tips">
-  ⚠️ 请上传小于 10MB 的 PDF 文件，尽量控制在 10 页以内，也可以上传多张图片合并为PDF
-</view>
-
-<!-- 上传的文件列表 -->
-<view class="section-header">
-  <text class="section-title">📤 已上传文件列表</text>
-  <view class="spacer" />
-  <button class="clear-btn" size="mini" bindtap="clearFileList">清空</button>
-</view>
-<view class="file-list">
-  <block wx:for="{{fileList}}" wx:key="index">
-    <view class="file-item"  data-path="{{item.path}}" data-name="{{item.name}}">
-      <image wx:if="{{item.type === 'image'}}" src="{{item.path}}" class="file-icon" mode="aspectFill" />
-      <image wx:if="{{item.type === 'pdf'}}" src="/static/images/icon/PDF.png" class="file-icon" mode="aspectFit" />
-      <text class="file-name">{{ item.name }}</text>
-      <!-- 删除图标 -->
-      <image class="delete-icon" src="/static/images/icon/delete.png" bindtap="deleteFile" data-index="{{index}}" />
+    <!-- 提示区域 -->
+    <view class="tips">
+        ⚠️ 请上传小于 10MB 的 PDF 文件，尽量控制在 10 页以内，也可以上传多张图片合并为PDF
     </view>
-  </block>
-  <view wx:if="{{fileList.length === 0}}" class="empty-text">暂无上传的文件</view>
-</view>
 
-<!-- 生成的合并文件列表 -->
-<view class="section-title">📄 合并生成文件列表</view>
-<view class="file-list">
-  <block wx:for="{{mergedList}}" wx:key="index">
-    <view class="file-item" bindtap="openFile" data-path="{{item.path}}">
-      <image src="/static/images/icon/PDF.png" class="file-icon" mode="aspectFit" />
-      <text class="file-name">{{ item.name }}</text>
+    <!-- 上传的文件列表 -->
+    <view class="section-header">
+        <text class="section-title">📤 已上传文件列表</text>
+        <view class="spacer" />
+        <button class="clear-btn" size="mini" bindtap="clearFileList">清空</button>
     </view>
-  </block>
-  <view wx:if="{{mergedList.length === 0}}" class="empty-text">暂无合并结果</view>
-</view>
-
-<!-- 底部按钮 -->
-<view class="bottom-btn-fixed">
-  <view class="button-row-right">
-    <van-button type="primary" size="large" custom-class="small-btn" bindtap="chooseFiles">选择 PDF</van-button>
-    <van-button type="success" size="large" custom-class="small-btn" bindtap="uploadAndMergePDFs" wx:if="{{fileList.length > 1}}">合并 PDF</van-button>
-  </view>
-</view>
-
-
-
-<!-- 成功提示 Modal -->
-<view wx:if="{{showSuccessModal}}">
-  <view class="modal-mask" bindtap="closeModal" />
-  <view class="modal-content">
-    <text class="modal-title">合并成功</text>
-    <view style="margin-top: 20rpx;">
-      <text>点击下方链接复制到浏览器下载：</text>
+    <view class="file-list">
+        <block wx:for="{{fileList}}" wx:key="index">
+            <view class="file-item" data-path="{{item.path}}" data-name="{{item.name}}">
+                <image wx:if="{{item.type === 'image'}}" src="{{item.path}}" class="file-icon" mode="aspectFill" />
+                <image wx:if="{{item.type === 'pdf'}}" src="/static/images/icon/PDF.png" class="file-icon" mode="aspectFit" />
+                <text class="file-name">{{ item.name }}</text>
+                <!-- 删除图标 -->
+                <image class="delete-icon" src="/static/images/icon/delete.png" bindtap="deleteFile" data-index="{{index}}" />
+            </view>
+        </block>
+        <view wx:if="{{fileList.length === 0}}" class="empty-text">暂无上传的文件</view>
     </view>
-    <view style="margin-top: 10rpx;">
-      <text bindtap="copyLink" style="color: #007aff; text-decoration: underline; font-weight: bold;">
-        {{fileName}}
-      </text>
+
+    <!-- 生成的合并文件列表 -->
+    <view class="section-title">📄 合并生成文件列表</view>
+    <view class="file-list">
+        <block wx:for="{{mergedList}}" wx:key="index">
+            <view class="file-item" bindtap="openFile" data-path="{{item.path}}">
+                <image src="/static/images/icon/PDF.png" class="file-icon" mode="aspectFit" />
+                <text class="file-name">{{ item.name }}</text>
+            </view>
+        </block>
+        <view wx:if="{{mergedList.length === 0}}" class="empty-text">暂无合并结果</view>
     </view>
-    <button style="margin-top: 30rpx;" type="primary" bindtap="closeModal">关闭</button>
-  </view>
-</view>
+
+    <!-- 底部按钮 -->
+    <view class="bottom-btn-fixed">
+        <view class="button-row-right">
+            <van-button type="primary" size="large" custom-class="small-btn" bindtap="chooseFiles">选择 PDF</van-button>
+            <van-button type="success" size="large" custom-class="small-btn" bindtap="uploadAndMergePDFs" wx:if="{{fileList.length > 1}}">合并 PDF</van-button>
+        </view>
+    </view>
+    <view wx:if="{{showSuccessModal}}">
+        <view class="modal-mask" bindtap="closeModal" />
+        <view class="modal-content">
+            <text class="modal-title">合并成功</text>
+            <view style="margin-top: 20rpx;">
+                <text>点击下方链接复制到浏览器下载：</text>
+            </view>
+            <view style="margin-top: 10rpx;">
+                <text bindtap="copyLink" style="color: #007aff; text-decoration: underline; font-weight: bold;">
+                    {{fileName}}
+                </text>
+            </view>
+            <button style="margin-top: 30rpx;" type="primary" bindtap="closeModal">关闭</button>
+        </view>
+    </view>
 
 </view>

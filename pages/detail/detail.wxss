@@ -83,6 +83,29 @@
     align-items: center;
     margin-top: 20rpx;
   } */
+  .rich-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-break: break-word;
+  }
+  
+  /* 针对 rich-text 内部图片等宽度溢出元素的处理 */
+  rich-text image {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  
+  rich-text pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow: auto;
+  }
+  
+  rich-text p {
+    word-break: break-word;
+  }
+  
   .comment-input {
     display: flex;
     align-items: center;  /* 垂直居中对齐 */

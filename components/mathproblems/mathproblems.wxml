@@ -1,0 +1,17 @@
+<view class="container">
+  <scroll-view scroll-y class="scroll-container">
+    <view class="problem-list">
+      <block wx:for="{{problems}}" wx:key="index">
+        <view class="problem-item">
+          {{index + 1}}. {{item.question}}
+          <view wx:if="{{showAnswer}}" class="answer">答：{{item.answer}}</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="btn-group">
+    <button type="primary" bindtap="generateProblems">生成应用题</button>
+    <button type="default" bindtap="toggleAnswer">{{showAnswer ? '隐藏答案' : '显示答案'}}</button>
+  </view>
+</view>

@@ -85,9 +85,6 @@
     right: 40rpx;
     width: 100rpx;
     height: 100rpx;
-
-
-
     border-radius: 50%;
     background-color: #acafb3;
     box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.3);
@@ -107,8 +104,6 @@
     justify-content: center;
     align-items: center;
   }
-
-
 .fab-image {
     width: 50rpx;
     height: 50rpx;

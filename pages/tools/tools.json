@@ -2,6 +2,10 @@
     "usingComponents": {
         "pdf-to-word": "/components/pdf_to_word/pdf_to_word",
         "pdfadd":"/components/pdfmarge/pdfmarge",
-        "img_to_word":"/components/img_to_word/img_to_word"
+        "img_to_word":"/components/img_to_word/img_to_word",
+        "tianzige":"/components/tianzige/tianzige",
+        "suanshu":"/components/suanshu/suanshu",
+        "mathproblems":"/components/mathproblems/mathproblems"
     }
+    
 }

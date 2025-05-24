@@ -1,0 +1,5 @@
+
+
+<view class="custom-navbar">
+  <text class="gradient-title">{{ title }}</text>
+</view>

@@ -18,6 +18,14 @@ Page({
         resultList:allfile
      })
     },
+    deleteFile(e) {
+        const index = e.currentTarget.dataset.index;
+        const newFileList = this.data.resultList.filter((_, i) => i !== index);
+        this.setData({
+            resultList: newFileList
+        });
+        wx.setStorageSync('savedFiles', newFileList)
+      },
     openFile(e) {
         const filePath = e.currentTarget.dataset.path;
         const fileType = filePath.split('.').pop(); // 提取后缀名

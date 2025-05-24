@@ -136,8 +136,10 @@
     left: 0;
     width: 100%;
     padding: 20rpx;
-    background-color: #ffffff;
-    box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.05);
+    /* background-color: #580909; */
+    background-color: rgba(255, 255, 255, 0.0); /* 半透明白色 */
+    /* background-image: linear-gradient(135deg, #acc5a1, #e4e732); */
+    /* box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.05); */
   }
   
   

@@ -1,3 +1,5 @@
+<custom-navbar title="我的信息" />
+
 <view class="container">
     <!-- 上半部分面板 -->
     <view class="panel">

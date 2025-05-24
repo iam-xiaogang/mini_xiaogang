@@ -1,8 +1,9 @@
 <view class="container">
    <image class="cover" src="{{article.art_img}}" mode="aspectFill" />
    <view class="title">{{article.title}}</view>
-   <rich-text  wx:if="{{article.content_html}}" nodes="{{article.content_html}}" space="nbsp"></rich-text>
-  <rich-text  wx:if="{{article.content}}" nodes="{{article.content}}" space="nbsp"></rich-text>
+   <view class="rich-container">
+   <rich-text  wx:if="{{article.content_html}}" nodes="{{article.content_html}}" space="nbsp"></rich-text></view>
+  <!-- <rich-text  wx:if="{{article.content}}" nodes="{{article.content}}" space="nbsp"></rich-text> -->
   <view>{{article.timestamp}}</view>
   <!-- <view class="comment" wx:for="{{comments}}" wx:key="id">
   <view class="comment-avatar">
