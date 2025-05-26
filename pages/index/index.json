@@ -1,7 +1,10 @@
 {
     "usingComponents": {
-      "van-notice-bar": "@vant/weapp/notice-bar/index"
+      "van-notice-bar": "@vant/weapp/notice-bar/index",
+      "custom-navbar":"/components/custom_navbar/custom_navbar"
+
     },
     "navigationBarTitleText": "我的工具箱",
+    "enablePullDownRefresh": false,
     "navigationStyle": "custom"
   }

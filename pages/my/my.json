@@ -3,5 +3,6 @@
         "custom-navbar":"/components/custom_navbar/custom_navbar"
     },
     "navigationBarTitleText": "我的信息",
+    "enablePullDownRefresh": false,
     "navigationStyle": "custom"
 }

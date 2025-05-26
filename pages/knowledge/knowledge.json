@@ -3,5 +3,6 @@
         "custom-navbar":"/components/custom_navbar/custom_navbar"
     },
     "navigationBarTitleText": "我的笔记",
+    "enablePullDownRefresh": false,
     "navigationStyle": "custom"
 }

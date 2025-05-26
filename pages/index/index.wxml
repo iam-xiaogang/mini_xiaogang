@@ -1,7 +1,7 @@
-<view class="custom-navbar">
+<!-- <view class="custom-navbar">
   <text class="gradient-title">我的工具箱</text>
-</view>
-
+</view> -->
+<custom-navbar title="我的工具箱" />
 
 <view class="container">
 

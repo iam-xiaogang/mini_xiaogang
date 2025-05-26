@@ -1,12 +1,20 @@
 .container {
     padding: 10px;
+    /* margin-top: 10rpx;  */
   }
-  
+  .custom-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+  }
   .panel {
     background-color: #f5f5f5; /* 浅灰色背景 */
     padding: 20px;
     border-radius: 10px;
     display: flex;
+    /* margin-top: 190rpx; */
     align-items: center;
   }
   
@@ -74,7 +82,7 @@
     font-size: 24px;
     color: #888;
   }
-  
+
   .cell-list {
     margin-top: 20px;
   }

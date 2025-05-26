@@ -1,28 +1,46 @@
+<!-- 顶部自定义导航栏 -->
 <custom-navbar title="我的笔记" />
 
-<view class="container">
-  <block wx:for="{{ categories }}" wx:key="id">
-    <view class="collapse-item">
-      <!-- 分类标题 -->
-      <view class="collapse-header" bindtap="toggleCollapse" data-id="{{ item.id }}">
+<!-- 主体区域：左右布局 -->
+<view class="tree-select-container">
+  <!-- 左侧分类栏 -->
+  <scroll-view class="sidebar" scroll-y="true" scroll-with-animation="true">
+    <block wx:for="{{ categories }}" wx:key="id">
+      <view class="sidebar-item {{ selectedCategoryId === item.id ? 'active' : '' }}"
+            bindtap="onSidebarSelect"
+            data-id="{{ item.id }}">
         {{ item.name }}
-        <text class="arrow">{{ activeId === item.id ? '▲' : '▼' }}</text>
       </view>
+    </block>
+  </scroll-view>
 
-      <!-- 展开内容 -->
-      <view wx:if="{{ activeId === item.id }}" class="collapse-body">
-        <block wx:for="{{ item.articles }}" wx:key="id" wx:for-item="article">
-          <view class="article-item" bindtap="goToDetail" data-id="{{ article.id }}">
-            <view class="article-title">{{ article.title }}</view>
-            <view class="article-summary">{{ article.summary }}</view>
-            <view class="article-info">
-              <text>作者：{{ article.author_name }}</text>
-              <text> · 浏览：{{ article.vc }}</text>
-            </view>
+  <!-- 右侧内容区域 -->
+  <scroll-view class="content" scroll-y="true" scroll-with-animation="true">
+    <block wx:if="{{ selectedArticles.length > 0 }}">
+      <block wx:for="{{ selectedArticles }}" wx:key="id">
+        <view class="article-item" bindtap="goToDetail" data-id="{{ item.id }}">
+          <view class="article-title">{{ item.title }}</view>
+          <view class="article-summary">{{ item.summary }}</view>
+          <view class="article-info">
+            <text>作者：{{ item.author_name }}</text>
+            <text> · 浏览：{{ item.vc }}</text>
           </view>
-        </block>
-      </view>
+        </view>
+      </block>
+    </block>
+    <view wx:else class="empty">暂无文章</view>
+  </scroll-view>
+  <!-- 密码弹窗 -->
+<view wx:if="{{showPasswordModal}}" class="modal-mask">
+  <view class="modal">
+    <view class="modal-title">输入密码～</view>
+    <input class="password-input" password placeholder="密码？" bindinput="onPasswordInput" />
+
+    <view class="modal-actions">
+      <button size="mini" bindtap="onCancelPassword">取消</button>
+      <button size="mini" type="primary" bindtap="onConfirmPassword">确定</button>
     </view>
-  </block>
+  </view>
 </view>
 
+</view>

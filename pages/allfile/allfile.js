@@ -26,6 +26,20 @@ Page({
         });
         wx.setStorageSync('savedFiles', newFileList)
       },
+      clearFileList(){
+          const data = wx.getStorageSync('savedFiles')
+          if(data.length===0){
+              wx.showToast({
+                title: '已经很干净了',
+                mask:true
+              })
+              return
+          }
+          this.setData({
+            resultList:[]
+          })
+          wx.setStorageSync('savedFiles', [])
+      },
     openFile(e) {
         const filePath = e.currentTarget.dataset.path;
         const fileType = filePath.split('.').pop(); // 提取后缀名
